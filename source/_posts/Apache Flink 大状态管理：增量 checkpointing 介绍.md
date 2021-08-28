@@ -4,9 +4,9 @@ category: Flink
 date: 2021-08-21
 ---
 
-> 翻译自 [Managing Large State in Apache Flink: An Intro to Incremental Checkpointing](https://flink.apache.org/features/2018/01/30/incremental-checkpointing.html)
-
 Apache Flink 专门为**状态流（stateful stream）**计算而搭建。那什么是流计算中的**状态（state）**？我在[上一篇博客](http://flink.apache.org/features/2017/07/04/flink-rescalable-state.html)中定义了状态和状态流计算，简单回顾一下：状态是被定义在**算子（operator）**中的一块内存空间，通过存储过去事件中的信息来影响未来事件的处理。
+
+<!--more-->
 
 在一些常见的复杂流计算场景中状态是一个基本且必要的概念。以下是[Flink 官方文档](https://ci.apache.org/projects/flink/flink-docs-release-1.3/dev/stream/state.html)中提到的几个经典场景：
 
@@ -96,3 +96,7 @@ Flink 支持并发执行多个 checkpoints，即会存在上个 checkpoint 未�
 *这篇文章[最初](https://data-artisans.com/blog/managing-large-state-apache-flink-incremental-checkpointing-overview)[发表在 Data Artisans 博客](https://data-artisans.com/blog/managing-large-state-apache-flink-incremental-checkpointing-overview)中，是由 Stefan Richter 和 Chris Ward 贡献的。*
 
 <img src="/img/wx_pub.png" width="400" />
+
+*翻译自 [Managing Large State in Apache Flink: An Intro to Incremental Checkpointing](https://flink.apache.org/features/2018/01/30/incremental-checkpointing.html)*
+
+*译者：[可可](https://coco-mark.github.io/) @ [欢迎邮件联系我](mailto:cherry.picker2018@icloud.com.)*

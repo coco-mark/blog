@@ -7,7 +7,7 @@ title: 可可的荧光笔
 subtitle: '一个大数据从业者不严谨的点滴记录。'
 description: ''
 keywords:
-author: coco
+author: wangzhao
 language: zh-CN
 timezone: ''
 
@@ -105,3 +105,7 @@ deploy:
   type: 'git'
   repo: 'git@github.com:coco-mark/coco-mark.github.io.git'
   branch: 'master'
+
+# sitemap
+sitemap:
+    path: sitemap.xml
