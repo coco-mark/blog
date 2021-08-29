@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 可可的荧光笔
-subtitle: '一个大数据从业者不严谨的点滴记录。'
+title: Coco's Mark
+subtitle: '持续专注于实时技术领域'
 description: ''
 keywords:
-author: wangzhao
+author: coco
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://coco-mark.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
