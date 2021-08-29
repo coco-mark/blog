@@ -1,5 +1,5 @@
 ---
-title: Apache Flink 大状态管理：增量 checkpointing 介绍
+title: Apache Flink：基于 Reactive Mode 的 Flink 自动扩容
 category: Flink
 date: 2021-08-28
 ---
@@ -12,7 +12,7 @@ date: 2021-08-28
 
 一个简单的衡量当前所需资源与可用资源是否匹配的方法是：计算当前负载与可用的 workers 数之间的面积。如下图所示，左图中分配了固定的资源量，可用看到：实际负载与可用的 workers 之间有很大的差距 —— 因此造成了资源的浪费。右图中展示了弹性资源分配的情况，红线与黑线之间的距离在负载的变化中不断的努力减小。
 
-![静态资源分配 vs 弹性资源分配](/img/intro.svg))
+![静态资源分配 vs 弹性资源分配](/img/intro.svg)
 
 
 多亏了 Flink 1.2 引入的[可扩展状态（rescalable state）](https://flink.apache.org/features/2017/07/04/flink-rescalable-state.html)，我们可以**手动**对 Flink 作业扩/缩容，即可以通过调整并行度、重启任务的方式来调整资源。例如，如果你的 Flink Job 当前的并行度是 100，当负载升高时可以上调并行度到 200 并重启应用来应对负载的升高。
