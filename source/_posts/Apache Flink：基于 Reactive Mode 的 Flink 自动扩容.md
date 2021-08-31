@@ -29,35 +29,30 @@ Flink 1.13 引入的[响应模式（reactive mode）](https://ci.apache.org/proj
 
 通过以下步骤你可以在本地的 Flink 1.13.0 版本中体验一下响应模式：
 
-```
+```bash
 # These instructions assume you are in the root directory of a Flink distribution.
-
 # Put Job into usrlib/ directory
-
 mkdir usrlib
-
 cp ./examples/streaming/TopSpeedWindowing.jar usrlib/
 
 # Submit Job in Reactive Mode
-
 ./bin/standalone-job.sh start -Dscheduler-mode=reactive -Dexecution.checkpointing.interval="10s" -j org.apache.flink.streaming.examples.windowing.TopSpeedWindowing
 
 # Start first TaskManager
-
 ./bin/taskmanager.sh start
 ```
 
 你已经开启了一个基于响应式模式的 Flink 任务。你可以通过 [Flink Web UI](http://localhost:8081/) 查看到刚刚启动的一个 TaskManager。如果想要扩容只需要简单的添加另外一个 TaskManager 即可：
 
-```
+```bash
 # Start additional TaskManager
-
 ./bin/taskmanager.sh start
+```
 
-To scale down, remove a TaskManager instance:
+如果想缩容，停止一个 TaskManager 实例即可：
 
+```bash
 # Remove a TaskManager
-
 ./bin/taskmanager.sh stop
 ```
 
@@ -113,7 +108,7 @@ To scale down, remove a TaskManager instance:
 
 在我们刚刚开启实验时，我们从图标中注意到一些 Flink 反常的表现：
 
-![响应模式未能很好的缩容](/img/highlight.png)
+![响应模式未能很好的缩容](/img/high-timeout.png)
 
 上面所有图中，我们可以看到会有毛刺出现：消费延迟曲线会突然增大到 600k（是平时 75k 正常峰值的 8 倍）。在“TaskManager 数量”监控看板中我们发现 TaskManager 数量某些情况下并没有很好的追随吞吐量曲线的变化。导致我们浪费了大量配置的 TaskManager 资源。
 

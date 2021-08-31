@@ -45,9 +45,11 @@ env.setStateBackend(newRocksDBStateBackend(filebackend, true))
 ```
 
 默认情况下，Flink 仅保留 1 个已完成的 checkpoint，如果需要保留更多，[可以通过以下配置](https://ci.apache.org/projects/flink/flink-docs-master/docs/dev/datastream/fault-tolerance/checkpointing/)：
+
 ```
 state.checkpoints.num-retained
 ```
+
 # 内部机制
 
 Flink 增量 checkpointing 是以 [RocksDB checkpoints](https://github.com/facebook/rocksdb/wiki/Checkpoints) 为基础实现的。RocksDB 底层基于“[log-structured-merge（LMS）](https://en.wikipedia.org/wiki/Log-structured_merge-tree)”树形结构实现，它在内存中维护了一个被称作“memtable”的**可变的内存缓冲区（changeable in-memory buffer）**，key 相同的数据被更新时原 value 会被覆盖。当 memtable 写满时会将数据按照 key 顺序写入到磁盘中，写入过程中还会对数据进行轻量级的压缩。一旦数据写入到磁盘中，该数据将不可改变，此时的数据结构被称为**“sorted-string-table（sstable）”**
