@@ -26,4 +26,4 @@ Flink checkpoint 一直以来都是 Flink 引以为豪的机制之一，它为 F
 
 *以上示例可以从 [github](https://github.com/coco-mark/flink-examples) 中下载代码进行测试。*
 
-*笔者：[可可](https://coco-mark.github.io/) @ [欢迎邮件联系我](mailto:cherry.picker2018@icloud.com.)*
+*[可可](https://coco-mark.github.io/) @ [欢迎邮件联系我](mailto:cherry.picker2018@icloud.com.)*

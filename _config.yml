@@ -102,10 +102,18 @@ theme: concise
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
+- type: 'leancloud_counter_sync'
+- type: 'git'
   repo: 'git@github.com:coco-mark/coco-mark.github.io.git'
   branch: 'master'
 
 # sitemap
 sitemap:
     path: sitemap.xml
+
+# learncloud访问统计
+leancloud_counter:
+  enable: true
+  app_id: KdszGdJLc8D30FIE4vllpnMc-gzGzoHsz
+  app_key: EF1W8FnzYxsnp1zFJgemb9kS
+  master_key: 
